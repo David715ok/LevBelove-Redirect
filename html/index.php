@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 <div class="container content">
     <div class="col-sm-12 col-md-6">
         <form action="submit-form.php" method="POST">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <label for="exampleFormControlInput1" class="form-label">Please verify you are Human</label>
             <input type="email" class="form-control mb-3" id="email" name="email" placeholder="<?php echo $email; ?>"
                 value="<?php echo $email; ?>" disabled>
 
