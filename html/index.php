@@ -3,6 +3,8 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <?php
 require_once('Config.php');
+session_start();
+$email = @$_GET['e'];
 if (isset($_POST['submit'])) {
     $captcha = $_POST['g-recaptcha-response'];
     if (!empty($captcha)) {
@@ -24,7 +26,8 @@ if (isset($_POST['submit'])) {
     <div class="col-sm-12 col-md-6">
         <form action="submit-form.php" method="POST">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control mb-3" id="email" name="email" placeholder="sam@tetsting.com" value="sam@tetsting.com" disabled>
+            <input type="email" class="form-control mb-3" id="email" name="email" placeholder="<?php echo $email; ?>"
+                value="<?php echo $email; ?>" disabled>
 
             <div class="g-recaptcha my-4" data-sitekey="<?php echo Config::sitekey; ?>"></div>
 
