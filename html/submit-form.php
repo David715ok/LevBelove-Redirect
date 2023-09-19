@@ -9,7 +9,7 @@ if (!empty($captcha)) {
     if (intval($responseKeys["success"]) != 1) {
         echo '<p>Please verify that you are not a robot.</p>';
     } else {
-        header("Location: puzzle.php?e=sam@tetsting.com");
+        header("Location: puzzle.php?e=" . urlencode($_POST['email']));
         exit();
     }
 } else {
